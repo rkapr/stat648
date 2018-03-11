@@ -1,0 +1,51 @@
+---
+title: "Solution 21"
+output:
+  html_document: default
+  word_document:
+    highlight: monochrome
+---
+
+
+###Problem 21:
+The following code uses the for() looping function to plot graphs that compare the relative population growth (here, by the use of a logarithmic scale) for the Australian states and territories.
+```
+oldpar <- par(mfrow=c(2,4))
+for (i in 2:9){
+plot(austpop[, 1], log(austpop[, i]), xlab="Year",
+ylab=names(austpop)[i], pch=16, ylim=c(0,10))}
+par(oldpar)
+```
+
+```{r prob21.importScript}
+# Read R script for problem 21 into current R Notebook file.
+knitr::read_chunk("pdf_prob21.R")
+```
+
+```{r prob21.info}
+```
+
+```{r prob21.setup}
+```
+
+```{r prob21.loadData}
+```
+
+Run the for loop.
+```{r prob21.runLoop}
+```
+
+Find a way to do this without looping. [Hint: Use the function sapply(), with austpop[,2:9] as the first.
+
+We first define the function plotCol1Colx( ) ...
+```{r prob21.funcDef}
+```
+
+and use it in sapply( )
+```{r prob21.funcSapply}
+```
+
+
+Clear the global environment.
+```{r prob21.clearEnv}
+```
